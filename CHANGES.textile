@@ -1,0 +1,24 @@
+h3. 0.9.0 / 2009-03-15
+
+* Warning: This release is not backwards-compatible!
+* Change loading behavior of base functionality, works better with Rails and Merb
+* Sunlight::SunlightObject is now Sunlight::Base
+* For set up, Sunlight.api_key= is now Sunlight::Base.api_key=
+* For set up, using "include 'Sunlight'" is no longer recommended
+* Correct usage is Sunlight::Legislator.all_for(...) instead of just Legislator.all_for(...)
+* Credit to Rue the Ghetto (rughetto on GitHub) and Eric Mill for inspiring the improvements above
+* Add support for senate_class ("I", "II", or "III") and in_office (0 or 1) on Legislator
+* Add support for Lobbyists, Filings, and Issues
+* Huge credit to mindleak on GitHub for Lobbyist-related functionality
+
+h3. 0.2.0 / 2009-03-01
+
+* Add support for twitter_id and youtube_url on Legislator
+* Add Legislator#search_by_name for fuzzy name searching
+* Add Legislator#all_in_zipcode for better lookups on a five-digit zip code
+* Raise exception when API Key isn't set
+* Credit for various fixes goes to GitHub users pengwynn, hoverbird, and wilson
+
+h3. 0.1.0 / 2008-08-20
+
+* Initial version

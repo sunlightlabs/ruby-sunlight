@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.textile</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.textile</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.textile
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Wed Aug 20 14:25:25 -0400 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+h1. <a href="../classes/Sunlight.html">Sunlight</a> Labs API Gem
+</p>
+<p>
+h2. Description
+</p>
+<p>
+A little gem that integrates with the <a
+href="../classes/Sunlight.html">Sunlight</a> Labs API. From the
+&quot;official site&quot;:<a
+href="http://services.sunlightlabs.com/api">services.sunlightlabs.com/api</a>/:
+</p>
+<p>
+bq. The <a href="../classes/Sunlight.html">Sunlight</a> Labs API provides
+methods for obtaining basic information on Members of Congress, legislator
+IDs used by various websites, and lookups between places and the
+politicians that represent them. The primary purpose of the API is to
+facilitate mashups involving politicians and the various other APIs that
+are out there.
+</p>
+<p>
+Full API documentation available &quot;here&quot;:<a
+href="http://services.sunlightlabs.com/api/docs">services.sunlightlabs.com/api/docs</a>/.
+</p>
+<p>
+Optionally, the <a href="../classes/Sunlight.html">Sunlight</a> gem
+integrates with the Google Maps API for &quot;street address
+geocoding&quot;:<a
+href="http://code.google.com/apis/maps/documentation/services.html#Geocoding">code.google.com/apis/maps/documentation/services.html#Geocoding</a>.
+Because some zip codes overlap two or more congressional districts, passing
+in a latitude/longitude will give users the most accurate information.
+Since it&#8216;s highly unlikely a user would know their exact lat/lng, the
+Google Maps API is used to translate a street address string into a lat/lng
+pair.
+</p>
+<p>
+h2. Installation
+</p>
+<p>
+The following gems are required:
+</p>
+<ul>
+<li>json
+
+</li>
+<li>ym4r
+
+</li>
+</ul>
+<p>
+@$ sudo gem install json ym4r@
+</p>
+<p>
+Then, install the <a href="../classes/Sunlight.html">Sunlight</a> gem:
+</p>
+<p>
+@$ sudo gem install luigi-sunlight &#8212;source=http://gems.github.com@
+</p>
+<p>
+h2. Usage
+</p>
+<p>
+First, register for an API key &quot;here&quot;:<a
+href="http://services.sunlightlabs.com/api/register">services.sunlightlabs.com/api/register</a>/.
+</p>
+<p>
+h2. License
+</p>
+<p>
+See the terms of usage for the &quot;<a
+href="../classes/Sunlight.html">Sunlight</a> Labs API&quot;:<a
+href="http://services.sunlightlabs.com/api">services.sunlightlabs.com/api</a>/
+and the &quot;Google Maps API&quot;:<a
+href="http://code.google.com/apis/maps/terms.html">code.google.com/apis/maps/terms.html</a>.
+</p>
+<p>
+Copyright &amp;copy; 2008 by Luigi Montanez under the MIT License.
+</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&quot;Software&quot;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+<p>
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

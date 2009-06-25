@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sunlight::Legislator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sunlight::Legislator</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/sunlight/legislator_rb.html">
+                lib/sunlight/legislator.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="SunlightObject.html">
+                SunlightObject
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000005">all_for</a>&nbsp;&nbsp;
+      <a href="#M000006">all_in_district</a>&nbsp;&nbsp;
+      <a href="#M000007">all_where</a>&nbsp;&nbsp;
+      <a href="#M000004">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">bioguide_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">congress_office</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">congresspedia_url</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">crp_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">district</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">email</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">event_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">fax</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">fec_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">firstname</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">gender</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">govtrack_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">lastname</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">middlename</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name_suffix</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">nickname</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">party</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">phone</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">state</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">title</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">votesmart_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">webform</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">website</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="#M000005" class="method-signature">
+          <span class="method-name">all_for</span><span class="method-args">(params)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Useful for getting the exact Legislators for a given district.
+</p>
+<p>
+Returns:
+</p>
+<p>
+A Hash of the three Members of Congress for a given <a
+href="District.html">District</a>: Two Senators and one Representative.
+</p>
+<p>
+You can pass in lat/long or address. The district will be determined for
+you:
+</p>
+<pre>
+  officials = Legislator.all_for(:latitude =&gt; 33.876145, :longitude =&gt; -84.453789)
+  senior = officials[:senior_senator]
+  junior = officials[:junior_senator]
+  rep = officials[:representative]
+
+  Legislator.all_for(:address =&gt; &quot;123 Fifth Ave New York, NY 10003&quot;)
+  Legislator.all_for(:address =&gt; &quot;90210&quot;) # not recommended, but it'll work
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/sunlight/legislator.rb, line 40</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_for</span>(<span class="ruby-identifier">params</span>)
+      
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:latitude</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:longitude</span>])
+        <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">all_in_district</span>(<span class="ruby-constant">District</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">:latitude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:latitude</span>], <span class="ruby-identifier">:longitude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:longitude</span>]))
+      <span class="ruby-keyword kw">elsif</span> (<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:address</span>])
+        <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">all_in_district</span>(<span class="ruby-constant">District</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">:address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:address</span>]))
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># appropriate params not found</span>
+      <span class="ruby-keyword kw">end</span>
+      
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">all_in_district</span><span class="method-args">(district)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A helper method for <a href="Legislator.html#M000005">all_for</a>. Use that
+instead, unless you already have the district object, then use this.
+</p>
+<p>
+Usage:
+</p>
+<pre>
+  officials = Legislator.all_in_district(District.new(&quot;NJ&quot;, &quot;7&quot;))
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/sunlight/legislator.rb, line 61</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_in_district</span>(<span class="ruby-identifier">district</span>)
+      
+      <span class="ruby-identifier">senior_senator</span> = <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">all_where</span>(<span class="ruby-identifier">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">district</span>.<span class="ruby-identifier">state</span>, <span class="ruby-identifier">:district</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Senior Seat&quot;</span>).<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">junior_senator</span> = <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">all_where</span>(<span class="ruby-identifier">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">district</span>.<span class="ruby-identifier">state</span>, <span class="ruby-identifier">:district</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Junior Seat&quot;</span>).<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">representative</span> = <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">all_where</span>(<span class="ruby-identifier">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">district</span>.<span class="ruby-identifier">state</span>, <span class="ruby-identifier">:district</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">district</span>.<span class="ruby-identifier">number</span>).<span class="ruby-identifier">first</span>
+            
+      {<span class="ruby-identifier">:senior_senator</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">senior_senator</span>, <span class="ruby-identifier">:junior_senator</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">junior_senator</span>, <span class="ruby-identifier">:representative</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">representative</span>}
+      
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">all_where</span><span class="method-args">(params)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A more general, open-ended search on Legislators than <a
+href="Legislator.html#M000005">all_for</a>. See the <a
+href="../Sunlight.html">Sunlight</a> API for list of conditions and values:
+</p>
+<p>
+<a
+href="http://services.sunlightlabs.com/api/docs/legislators">services.sunlightlabs.com/api/docs/legislators</a>/
+</p>
+<p>
+Returns:
+</p>
+<p>
+An array of <a href="Legislator.html">Legislator</a> objects that matches
+the conditions
+</p>
+<p>
+Usage:
+</p>
+<pre>
+  johns = Legislator.all_where(:firstname =&gt; &quot;John&quot;)
+  floridians = Legislator.all_where(:state =&gt; &quot;FL&quot;)
+  dudes = Legislator.all_where(:gender =&gt; &quot;M&quot;)
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/sunlight/legislator.rb, line 88</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_where</span>(<span class="ruby-identifier">params</span>)
+      
+      <span class="ruby-identifier">url</span> = <span class="ruby-identifier">construct_url</span>(<span class="ruby-value str">&quot;legislators.getList&quot;</span>, <span class="ruby-identifier">params</span>)
+      
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">result</span> = <span class="ruby-identifier">get_json_data</span>(<span class="ruby-identifier">url</span>))
+            
+        <span class="ruby-identifier">legislators</span> = []
+        <span class="ruby-identifier">result</span>[<span class="ruby-value str">&quot;response&quot;</span>][<span class="ruby-value str">&quot;legislators&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">legislator</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">legislators</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">legislator</span>[<span class="ruby-value str">&quot;legislator&quot;</span>])
+        <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-identifier">legislators</span>
+      
+      <span class="ruby-keyword kw">else</span>  
+        <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span> <span class="ruby-comment cmt"># if response.class</span>
+      
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="#M000004" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(params)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Takes in a hash where the keys are strings (the format passed in by the
+JSON parser)
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/sunlight/legislator.rb, line 13</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">params</span>)
+      <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>    
+        <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Legislator</span>.<span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">key</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
