@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Library for accessing the Sunlight Labs API."
   s.rubyforge_project = "sunlight"
   s.email = "luigi@sunlightfoundation.com"
-  s.homepage = "http://github.com/luigi/sunlight"
+  s.homepage = "http://github.com/sunlightlabs/ruby-sunlightapi/"
   s.authors = ["Luigi Montanez"]
   s.files = ['sunlight.gemspec', 'lib/sunlight.rb', 'lib/sunlight/base.rb',
              'lib/sunlight/district.rb', 'lib/sunlight/legislator.rb', 

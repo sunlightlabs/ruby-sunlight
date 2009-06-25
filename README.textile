@@ -22,14 +22,9 @@ The following gems are required:
 
 @$ sudo gem install json ym4r@
 
-Then, install the stable Sunlight gem:
+Then, install the gem:
 
 @$ sudo gem install sunlight@
-
-Or, if you're adventurous, the latest dev version (which should be quite stable):
-
-@$ sudo gem install sunlightlabs-ruby-sunlightapi --source=http://gems.github.com@
-
 
 
 h2. Set Up
