@@ -28,7 +28,7 @@ Then, install the stable Sunlight gem:
 
 Or, if you're adventurous, the latest dev version (which should be quite stable):
 
-@$ sudo gem install luigi-sunlight --source=http://gems.github.com@
+@$ sudo gem install sunlightlabs-ruby-sunlightapi --source=http://gems.github.com@
 
 
 
@@ -200,7 +200,7 @@ h2. License
 
 See the terms of usage for the "Sunlight Labs API":http://services.sunlightlabs.com/api/ and the "Google Maps API":http://code.google.com/apis/maps/terms.html.
 
-Copyright &copy; 2009 by Luigi Montanez under the MIT License.
+Copyright &copy; 2009 by Luigi Montanez and the Sunlight Foundation under the MIT License.
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
