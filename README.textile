@@ -43,7 +43,7 @@ If you're testing this out in IRB, you'll run them one at a time. If you're usin
 
 h2. Usage
 
-The Sunlight gem currently supports the Legislator and District objects. The Lobbyist object is coming soon.
+The Sunlight gem fully wraps the Sunlight Labs API.
 
 h3. Legislator
 
