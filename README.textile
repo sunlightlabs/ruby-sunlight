@@ -1,6 +1,8 @@
 h1. Sunlight Labs API Gem
 
-NOTE: This file is formatted in Textile and best viewed on "GitHub":http://github.com/luigi/sunlight.
+NOTE: This file is formatted in Textile and best viewed on "GitHub":http://github.com/sunlightlabs/ruby-sunlightapi.
+
+See "RDoc.info":http://rdoc.info/projects/sunlightlabs/ruby-sunlightapi for the full RDoc.
 
 h2. Description
 
