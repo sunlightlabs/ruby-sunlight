@@ -6,7 +6,7 @@ module Sunlight
 
     def initialize(state, number)
       @state = state
-      @number = number
+      @number = number.to_i.to_s
     end
 
 
