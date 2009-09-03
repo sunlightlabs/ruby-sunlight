@@ -95,10 +95,10 @@ You can also use the @Legislator#all_where@ method for searching based on availa
 	end
 </code></pre>
 
-Lastly, to provide your users with a name search functionality, use @Legislator#search_by_name@, which uses fuzzy matching to compensate for nicknames and misspellings. So "Teddy Kennedey" (real name Edward Kennedy) and "Jack Murtha" (real name John Murtha) will return the correct matches. You can specify a higher confidence threshold (default set to 0.80) if you feel that the matches being returned aren't accurate enough. This also returns an array of @Legislator@ objects:
+Lastly, to provide your users with a name search functionality, use @Legislator#search_by_name@, which uses fuzzy matching to compensate for nicknames and misspellings. So "Ed Markey" (real name Edward Markey) and "Jack Murtha" (real name John Murtha) will return the correct matches. You can specify a higher confidence threshold (default set to 0.80) if you feel that the matches being returned aren't accurate enough. This also returns an array of @Legislator@ objects:
 
 <pre><code>
-	legislators = Sunlight::Legislator.search_by_name("Teddy Kennedey")
+	legislators = Sunlight::Legislator.search_by_name("Ed Markey")
 	legislators = Sunlight::Legislator.search_by_name("Johnny Boy Kerry", 0.91)
 </code></pre>
 
@@ -155,7 +155,7 @@ The @Committee@ object also keeps a collection of members in that committee, but
 Coming from the opposite direction, the @Legislator@ object has a method for getting all committees for that particular Legislator, returning an array of @Committee@ objects:
 
 <pre><code>
-  legislators = Sunlight::Legislator.search_by_name("Ted Kennedy")
+  legislators = Sunlight::Legislator.search_by_name("Byron Dorgan")
   legislator = legislators.first
   legislator.committees.each do |committee|
     # do some stuff...
