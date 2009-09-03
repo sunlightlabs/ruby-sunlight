@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'json'
 require 'cgi'
 require 'ym4r/google_maps/geocoding'
