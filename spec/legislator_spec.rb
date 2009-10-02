@@ -25,6 +25,24 @@ describe Sunlight::Legislator do
 
   end
   
+  describe "#youtube_id" do
+    
+    it "should return blank if youtube_url is nil" do
+      @jan.youtube_id.should be nil
+    end
+
+    it "should return jansmith if youtube_url is http://www.youtube.com/jansmith" do
+      @jan.youtube_url = "http://www.youtube.com/jansmith"
+      @jan.youtube_id.should eql("jansmith")
+    end
+
+    it "should return jansmith if youtube_url is http://www.youtube.com/user/jansmith" do
+      @jan.youtube_url = "http://www.youtube.com/user/jansmith"
+      @jan.youtube_id.should eql("jansmith")
+    end
+    
+  end
+  
   describe "#committees" do
     
     

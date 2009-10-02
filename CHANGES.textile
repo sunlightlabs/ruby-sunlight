@@ -1,3 +1,7 @@
+h3. 1.0.4 / 2009/10-02
+
+* Implement youtube_id for YouTube usernames
+
 h3. 1.0.3 / 2009-09-03
 
 * Be a good Ruby citizen and remove require 'rubygems'
