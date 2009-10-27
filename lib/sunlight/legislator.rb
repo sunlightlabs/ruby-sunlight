@@ -7,12 +7,13 @@ module Sunlight
                   :party, :state, :district, :gender, :phone, :fax, :website, :webform,
                   :email, :congress_office, :bioguide_id, :votesmart_id, :fec_id,
                   :govtrack_id, :crp_id, :event_id, :congresspedia_url, :youtube_url,
-                  :twitter_id, :fuzzy_score, :in_office, :senate_class
+                  :twitter_id, :fuzzy_score, :in_office, :senate_class, :birthdate
 
     # Takes in a hash where the keys are strings (the format passed in by the JSON parser)
     #
     def initialize(params)
-      params.each do |key, value|    
+      params.each do |key, value|
+        value = Time.parse(value) if key == "birthdate" && value && value.size > 0
         instance_variable_set("@#{key}", value) if Legislator.instance_methods.include? key
       end
     end
