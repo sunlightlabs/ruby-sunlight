@@ -5,7 +5,7 @@ module Sunlight
     attr_accessor :name, :id, :chamber, :subcommittees, :members
 
     def initialize(params)
-      params.each do |key, value|    
+      params.each do |key, value|
 
         case key
 
@@ -22,7 +22,7 @@ module Sunlight
           end
     
         else
-          instance_variable_set("@#{key}", value) if Committee.instance_methods.include? key
+          instance_variable_set("@#{key}", value) if Committee.instance_methods.map { |m| m.to_sym }.include? key.to_sym
         end
       end
     end

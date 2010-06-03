@@ -14,7 +14,7 @@ module Sunlight
     def initialize(params)
       params.each do |key, value|
         value = Time.parse(value) if key == "birthdate" && value && value.size > 0
-        instance_variable_set("@#{key}", value) if Legislator.instance_methods.include? key
+        instance_variable_set("@#{key}", value) if Legislator.instance_methods.map { |m| m.to_sym }.include? key.to_sym
       end
     end
     

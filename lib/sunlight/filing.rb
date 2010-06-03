@@ -15,7 +15,7 @@ module Sunlight
     #
     def initialize(params)
       params.each do |key, value|    
-        instance_variable_set("@#{key}", value) if Filing.instance_methods.include? key
+        instance_variable_set("@#{key}", value) if Filing.instance_methods.map { |m| m.to_sym }.include? key.to_sym
       end
     end
 
