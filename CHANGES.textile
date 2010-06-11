@@ -1,3 +1,11 @@
+h3. 1.0.7 / 2010-06-11
+
+* Support for Ruby 1.9.x, specifically the JSON gem (thanks to Brian Cardarella)
+
+h3. 1.0.6 / 2010-05-25
+
+* Added committee.rb to the gemspec (thanks to Dan Melton)
+
 h3. 1.0.5 / 2009-10-27
 
 * Implement birthdate on Legislator as a Time object
