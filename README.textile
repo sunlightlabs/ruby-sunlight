@@ -162,36 +162,6 @@ Coming from the opposite direction, the @Legislator@ object has a method for get
   end
 </code></pre>
 
-h3. Lobbyists and Filings
-
-Moving away from members of Congress, the Sunlight API also exposes data on @Lobbyists@, the organizations and companies they lobby on behalf of, and the @Issues@ they lobby on. Lobbyists must submit filings to the Senate Office of Public Records, and these are represented as @Filings@ in the API.
-
-Like on the @Legislator@ object, the @Lobbyist@ object provides for fuzzy name search capability. However, because the universe of Lobbyists is much larger than Legislators, the confidence threshold defaults to 0.90 instead of 0.80, and also limits the search to Lobbyists who have filed in the current year. Both can be adjusted, and the method returns an array of @Lobbyist@ objects:
-
-<pre><code>
-	lobbyists = Lobbyist.search("Nisha Thompsen")
-	lobbyists = Lobbyist.search("Michael Klein", 0.95, 2007)	
-</code></pre>
-
-You can also use the @Filing@ object to get a specific filing record, where the unique identifier comes from the "Senate Office of Public Records":http://senate.gov/legislative/Public_Disclosure/LDA_reports.htm. The @Filing@ object will have an array of issues and lobbyists associated to it.
-
-<pre><code>
-	filing = Sunlight::Filing.get("29D4D19E-CB7D-46D2-99F0-27FF15901A4C")
-	filing.issues.each { |issue| ... }
-	filing.lobbyists.each { |lobbyist| ... }
-</code></pre>
-
-If you have a client name (that is, the organization or company the lobbyist works for) or the registrant name (the lobbyist), then you can also find associated filings. To use the @all_where@ method, pass in a hash with @:client_name@, @:registrant_name@, and @:year@ as the keys. You must pass in @:client_name@ or @:registrant_name@. 
-
-<pre><code>
-	filings = Filing.all_where(:client_name => "SUNLIGHT FOUNDATION")
-	filings.each do |filing|
-	  ...
-	  filing.issues.each { |issue| ... }
-	  filing.lobbyists.each { |issue| ... }    
-	end
-</code></pre>
-
 
 h2. License
 
