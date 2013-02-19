@@ -14,8 +14,9 @@ Gem::Specification.new do |s|
     'lib/sunlight/district.rb', 
     'lib/sunlight/legislator.rb',
     'lib/sunlight/committee.rb', 
-    'README.textile', 
-    'CHANGES.textile'
+    'README.md', 
+    'CHANGES.md',
+    'LICENSE'
   ]
 
   s.add_dependency "json", [">= 1.1.3"]

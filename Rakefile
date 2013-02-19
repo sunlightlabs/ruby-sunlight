@@ -21,9 +21,9 @@ end
 
 desc 'Generate RDoc documentation'
 Rake::RDocTask.new(:rdoc) do |rdoc|
-  files = ['README.textile', 'CHANGES.textile', 'lib/**/*.rb']
+  files = ['README.md', 'CHANGES.md', 'lib/**/*.rb']
   rdoc.rdoc_files.add(files)
-  rdoc.main     = "README.textile"
+  rdoc.main     = "README.md"
   rdoc.title    = "sunlight"
   rdoc.rdoc_dir = 'doc'
   rdoc.options << '--inline-source'
