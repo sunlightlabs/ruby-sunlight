@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = ["Luigi Montanez", "Eric Mill", "Sunlight Foundation"]
   s.files = [
     'sunlight.gemspec', 
-    
+
     'lib/sunlight.rb', 
     'lib/sunlight/base.rb',
     
@@ -23,5 +23,4 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency "json", [">= 1.1.3"]
-  s.add_dependency "ym4r", [">= 0.6.1"]
 end
