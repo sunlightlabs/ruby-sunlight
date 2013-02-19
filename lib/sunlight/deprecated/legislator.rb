@@ -1,3 +1,5 @@
+require 'time'
+
 module Sunlight
   module Deprecated
 

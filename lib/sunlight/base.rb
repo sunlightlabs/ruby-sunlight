@@ -1,3 +1,6 @@
+require 'net/http'
+require 'cgi'
+
 module Sunlight
 
   # Houses general methods to work with the Sunlight and Google Maps APIs
