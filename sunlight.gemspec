@@ -9,11 +9,14 @@ Gem::Specification.new do |s|
   s.authors = ["Luigi Montanez", "Eric Mill", "Sunlight Foundation"]
   s.files = [
     'sunlight.gemspec', 
+    
     'lib/sunlight.rb', 
     'lib/sunlight/base.rb',
-    'lib/sunlight/district.rb', 
-    'lib/sunlight/legislator.rb',
-    'lib/sunlight/committee.rb', 
+    
+    'lib/sunlight/deprecated/district.rb', 
+    'lib/sunlight/deprecated/legislator.rb',
+    'lib/sunlight/deprecated/committee.rb', 
+
     'README.md', 
     'CHANGES.md',
     'LICENSE'
