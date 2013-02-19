@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary = "Client for the Sunlight Congress API."
   s.description = "Client for the Sunlight Congress API."
   s.email = "api@sunlightfoundation.com"
-  s.homepage = "http://github.com/sunlightlabs/ruby-sunlight"
+  s.homepage = "https://github.com/sunlightlabs/ruby-sunlight"
   s.authors = ["Luigi Montanez", "Eric Mill", "Sunlight Foundation"]
   s.files = [
     'sunlight.gemspec', 
