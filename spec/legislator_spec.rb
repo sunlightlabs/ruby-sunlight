@@ -9,9 +9,7 @@ describe Sunlight::Legislator do
       "webform"=>"https://forms.house.gov/wyr/welcome.shtml", 
       "title"=>"Rep", 
       "nickname"=>"", 
-      "eventful_id"=>"P0-001-000016482-0", 
       "district"=>"4", 
-      "congresspedia_url"=>"http://www.sourcewatch.org/index.php?title=Carolyn_McCarthy", 
       "fec_id"=>"H6NY04112", 
       "middlename"=>"", 
       "gender"=>"F", 
@@ -25,10 +23,7 @@ describe Sunlight::Legislator do
       "govtrack_id"=>"400257", 
       "fax"=>"202-225-5758", 
       "website"=>"http://carolynmccarthy.house.gov/", 
-      "votesmart_id"=>"693", 
-      "sunlight_old_id"=>"fakeopenID252", 
       "party"=>"D", 
-      "email"=>"", 
       "state"=>"NY"
     }
 
@@ -37,7 +32,6 @@ describe Sunlight::Legislator do
     @tom = Sunlight::Legislator.new({"firstname" => "Tom", "district" => "4", "title" => "Rep"})
 
     @example_legislators = {:senior_senator => @jan, :junior_senator => @bob, :representative => @tom}
-
   end
 
   describe "#initialize" do
