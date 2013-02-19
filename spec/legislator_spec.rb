@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe Sunlight::Legislator do
-
+describe Sunlight::Deprecated::Legislator do
   before :each do
 
     Sunlight::Base.api_key = 'the_api_key'
@@ -27,9 +26,9 @@ describe Sunlight::Legislator do
       "state"=>"NY"
     }
 
-    @jan = Sunlight::Legislator.new({"firstname" => "Jan", "district" => "Senior Seat", "title" => "Sen"})  
-    @bob = Sunlight::Legislator.new({"firstname" => "Bob", "district" => "Junior Seat", "title" => "Sen"})
-    @tom = Sunlight::Legislator.new({"firstname" => "Tom", "district" => "4", "title" => "Rep"})
+    @jan = Sunlight::Deprecated::Legislator.new({"firstname" => "Jan", "district" => "Senior Seat", "title" => "Sen"})  
+    @bob = Sunlight::Deprecated::Legislator.new({"firstname" => "Bob", "district" => "Junior Seat", "title" => "Sen"})
+    @tom = Sunlight::Deprecated::Legislator.new({"firstname" => "Tom", "district" => "4", "title" => "Rep"})
 
     @example_legislators = {:senior_senator => @jan, :junior_senator => @bob, :representative => @tom}
   end
@@ -37,8 +36,8 @@ describe Sunlight::Legislator do
   describe "#initialize" do
 
     it "should create an object from a JSON parser-generated hash" do
-      carolyn = Sunlight::Legislator.new(@example_hash)
-      carolyn.should be_an_instance_of(Sunlight::Legislator)
+      carolyn = Sunlight::Deprecated::Legislator.new(@example_hash)
+      carolyn.should be_an_instance_of(Sunlight::Deprecated::Legislator)
       carolyn.firstname.should eql("Carolyn")
     end
 
@@ -73,17 +72,17 @@ describe Sunlight::Legislator do
       Sunlight::Base.should_receive(:get_json_data).and_return({"response" => {"committees" => 
                                                                               [{"committee" => @example_committee}]}})
       
-      carolyn = Sunlight::Legislator.new(@example_hash)                                                                             
+      carolyn = Sunlight::Deprecated::Legislator.new(@example_hash)                                                                             
       comms = carolyn.committees
       comms.should be_an_instance_of(Array)
-      comms[0].should be_an_instance_of(Sunlight::Committee)
+      comms[0].should be_an_instance_of(Sunlight::Deprecated::Committee)
     end
     
     it "should return nil if no committees are found" do
       
       Sunlight::Base.should_receive(:get_json_data).and_return(nil)
       
-      carolyn = Sunlight::Legislator.new(@example_hash)                                                                             
+      carolyn = Sunlight::Deprecated::Legislator.new(@example_hash)                                                                             
       comms = carolyn.committees
       comms.should be_nil
     end
@@ -93,32 +92,25 @@ describe Sunlight::Legislator do
   describe "#all_for" do
 
     it "should return nil when junk is passed in" do
-      legislators = Sunlight::Legislator.all_for(:bleh => 'blah')
+      legislators = Sunlight::Deprecated::Legislator.all_for(:bleh => 'blah')
       legislators.should be(nil)
     end
 
     it "should return hash when valid lat/long are passed in" do
-      Sunlight::Legislator.should_receive(:all_in_district).and_return(@example_legislators)
+      Sunlight::Deprecated::Legislator.should_receive(:all_in_district).and_return(@example_legislators)
 
-      legislators = Sunlight::Legislator.all_for(:latitude => 33.876145, :longitude => -84.453789)
+      legislators = Sunlight::Deprecated::Legislator.all_for(:latitude => 33.876145, :longitude => -84.453789)
       legislators[:senior_senator].firstname.should eql('Jan')
     end
-
-    it "should return hash when valid address is passed in" do
-      Sunlight::Legislator.should_receive(:all_in_district).and_return(@example_legislators)
-
-      legislators = Sunlight::Legislator.all_for(:address => "123 Fake St Anytown USA")
-      legislators[:junior_senator].firstname.should eql('Bob')
-    end
-
+    
   end
 
   describe "#all_in_district" do
 
     it "should return has when valid District object is passed in" do
-      Sunlight::Legislator.should_receive(:all_where).exactly(3).times.and_return([@jan])
+      Sunlight::Deprecated::Legislator.should_receive(:all_where).exactly(3).times.and_return([@jan])
 
-      legislators = Sunlight::Legislator.all_in_district(Sunlight::District.new("NJ", "7"))
+      legislators = Sunlight::Deprecated::Legislator.all_in_district(Sunlight::Deprecated::District.new("NJ", "7"))
       legislators.should be_an_instance_of(Hash)
       legislators[:senior_senator].firstname.should eql('Jan')
     end
@@ -129,16 +121,16 @@ describe Sunlight::Legislator do
   describe "#all_where" do
 
     it "should return array when valid parameters passed in" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"legislators"=>[{"legislator"=>{"state"=>"GA"}}]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"legislators"=>[{"legislator"=>{"state"=>"GA"}}]}})
 
-      legislators = Sunlight::Legislator.all_where(:firstname => "Susie")
+      legislators = Sunlight::Deprecated::Legislator.all_where(:firstname => "Susie")
       legislators.first.state.should eql('GA')
     end
 
     it "should return nil when unknown parameters passed in" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return(nil)
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return(nil)
 
-      legislators = Sunlight::Legislator.all_where(:blah => "Blech")
+      legislators = Sunlight::Deprecated::Legislator.all_where(:blah => "Blech")
       legislators.should be(nil)
     end
 
@@ -147,16 +139,16 @@ describe Sunlight::Legislator do
   describe "#all_in_zipcode" do
     
     it "should return array when valid parameters passed in" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"legislators"=>[{"legislator"=>{"state"=>"GA"}}]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"legislators"=>[{"legislator"=>{"state"=>"GA"}}]}})
       
-      legislators = Sunlight::Legislator.all_in_zipcode(:zip => "30339")
+      legislators = Sunlight::Deprecated::Legislator.all_in_zipcode(:zip => "30339")
       legislators.first.state.should eql('GA')
     end
     
     it "should return nil when unknown parameters passed in" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return(nil)
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return(nil)
 
-      legislators = Sunlight::Legislator.all_in_zipcode(:blah => "Blech")
+      legislators = Sunlight::Deprecated::Legislator.all_in_zipcode(:blah => "Blech")
       legislators.should be(nil)
     end
     
@@ -166,39 +158,39 @@ describe Sunlight::Legislator do
   describe "#search_by_name" do
     
     it "should return array when probable match passed in with no threshold" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
       
-      legislators = Sunlight::Legislator.search_by_name("Teddy Kennedey")
+      legislators = Sunlight::Deprecated::Legislator.search_by_name("Teddy Kennedey")
       legislators.first.fuzzy_score.should eql(0.91)
       legislators.first.firstname.should eql('Edward')
     end
     
     it "should return an array when probable match passed in is over supplied threshold" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
     
-      legislators = Sunlight::Legislator.search_by_name("Teddy Kennedey", 0.9)
+      legislators = Sunlight::Deprecated::Legislator.search_by_name("Teddy Kennedey", 0.9)
       legislators.first.fuzzy_score.should eql(0.91)
       legislators.first.firstname.should eql('Edward')
     end
     
     it "should return nil when probable match passed in but underneath supplied threshold" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[{"result"=>{"score"=>"0.91", "legislator"=>{"firstname"=>"Edward"}}}]}})
     
-      legislators = Sunlight::Legislator.search_by_name("Teddy Kennedey", 0.92)
+      legislators = Sunlight::Deprecated::Legislator.search_by_name("Teddy Kennedey", 0.92)
       legislators.should be(nil)
     end
     
     it "should return nil when no probable match at all" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[]}})
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return({"response"=>{"results"=>[]}})
     
-      legislators = Sunlight::Legislator.search_by_name("923jkfkj elkji")
+      legislators = Sunlight::Deprecated::Legislator.search_by_name("923jkfkj elkji")
       legislators.should be(nil)      
     end
     
     it "should return nil on bad data" do
-      Sunlight::Legislator.should_receive(:get_json_data).and_return(nil)
+      Sunlight::Deprecated::Legislator.should_receive(:get_json_data).and_return(nil)
     
-      legislators = Sunlight::Legislator.search_by_name("923jkfkj elkji","lkjd")
+      legislators = Sunlight::Deprecated::Legislator.search_by_name("923jkfkj elkji","lkjd")
       legislators.should be(nil)      
     end    
     

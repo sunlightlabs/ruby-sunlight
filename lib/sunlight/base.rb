@@ -30,17 +30,17 @@ module Sunlight
       get_string = ""
 
       h.each_pair do |key, value|
-        get_string += "&#{key.to_s}=#{CGI::escape(value.to_s)}"
+        get_string += "&#{key.to_s}=#{CGI::escape value.to_s}"
       end
 
       get_string
 
-    end # def hash2get    
+    end
 
     # Use the Net::HTTP and JSON libraries to make the API call
     #
     # Usage:
-    #   Legislator::District.get_json_data("http://someurl.com")    # returns Hash of data or nil
+    #   Sunlight::Deprecated::District.get_json_data("http://someurl.com")    # returns Hash of data or nil
     def self.get_json_data(url)
 
       response = Net::HTTP.get_response(URI.parse(url))
@@ -50,8 +50,8 @@ module Sunlight
         nil
       end
 
-    end # self.get_json_data
+    end
 
-  end # class Base
+  end
 
-end # module Sunlight
+end
