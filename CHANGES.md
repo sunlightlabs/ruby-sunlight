@@ -4,7 +4,7 @@
   * `Sunlight::Legislator` -> `Sunlight::Deprecated::Legislator`
   * `Sunlight::District` -> `Sunlight::Deprecated::District`
   * `Sunlight::Committee` -> `Sunlight::Deprecated::Committee`
-* Remove geocoding functions, no longer using Google Maps geocoding API
+* Remove geocoding functions, no longer using Google Maps geocoding API (which is prohibited for applications not embedding a Google Map)
 * Remove a few fields where even the old Congress API has dropped support or stopped updating the info: 
   * `votesmart_id`
   * `congresspedia_url`
