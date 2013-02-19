@@ -1,3 +1,15 @@
+### 2.0.0 / In-progress
+
+* Moved old classes and methods to `Sunlight::Deprecated`:
+  * `Sunlight::Legislator` -> `Sunlight::Deprecated::Legislator`
+  * `Sunlight::District` -> `Sunlight::Deprecated::District`
+  * `Sunlight::Committee` -> `Sunlight::Deprecated::Committee`
+* Remove geocoding functions, no longer using Google Maps geocoding API
+* Remove a few fields where even the old Congress API has dropped support or stopped updating the info: 
+  * `votesmart_id`
+  * `congresspedia_url`
+  * `email`
+
 ### 1.1.0 / 2010-05-18
 
 * Added Gemfile (thanks Bobby Wilson)
