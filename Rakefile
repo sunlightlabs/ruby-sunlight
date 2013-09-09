@@ -1,9 +1,8 @@
 require 'rubygems'
 require 'rake'
-require 'rake/rdoctask'
+require (RUBY_VERSION =~ /1\.8/ ? 'rake/rdoctask' : 'rdoc/task')
 require 'rspec'
 require 'rspec/core/rake_task'
-require 'rcov/rcovtask'
 
 Version = '0.1.0'
 
@@ -13,10 +12,31 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = ["--colour", "--format", "documentation"]
 end
 
-desc 'Performs code coverage via rake rcov'
-Rcov::RcovTask.new do |t|
-  t.test_files = FileList['spec/*_spec.rb']
-  t.verbose = true
+if RUBY_VERSION =~ /1\.8/
+  require 'rcov/rcovtask'
+
+  desc 'Performs code coverage via rake rcov'
+  Rcov::RcovTask.new do |t|
+    t.test_files = FileList['spec/*_spec.rb']
+    t.verbose = true
+  end
+end
+
+if (RUBY_VERSION =~ /1\.9/ or RUBY_VERSION[0].to_i >= 2)
+  require 'simplecov'
+  require 'simplecov-rcov'
+
+  desc 'Performs code coverage via rake simplecov'
+  task :simplecov do
+    ENV['COVERAGE'] = 'true'
+    Rake::Task['spec'].execute
+  end
+end
+
+desc 'Performs code coverage via rake coverage'
+task :coverage do
+  if RUBY_VERSION =~ /1\.8/ then Rake::Task['rcov'].execute end
+  if RUBY_VERSION =~ /1\.9/ || RUBY_VERSION[0].to_i >= 2 then Rake::Task['simplecov'].execute end
 end
 
 desc 'Generate RDoc documentation'

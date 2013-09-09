@@ -1,9 +1,12 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'json'
 gem 'ym4r'
 
-group :development do
+group :development, :test do
+  gem 'rake'
   gem 'rspec',      '>= 2.6.0'
-  gem 'rcov'
+  gem 'rcov', :platforms => :mri_18
+  gem 'simplecov', :platforms => [:mri_19, :mri_20], :require => false
+  gem 'simplecov-rcov', :platforms => [:mri_19, :mri_20], :require => false
 end
