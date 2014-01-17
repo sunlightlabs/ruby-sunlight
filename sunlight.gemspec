@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
              'lib/sunlight/district.rb', 'lib/sunlight/legislator.rb',
              'lib/sunlight/committee.rb', 'README.textile', 'CHANGES.textile']
   s.add_dependency("json", [">= 1.1.3"])
-  s.add_dependency("ym4r", [">= 0.6.1"])
+  s.add_dependency("geocoder", [">= 1.1.9"])
   s.has_rdoc = true
 end

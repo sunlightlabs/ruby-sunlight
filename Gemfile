@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'json'
-gem 'ym4r'
+gem 'geocoder'
 
 group :development, :test do
   gem 'rake'

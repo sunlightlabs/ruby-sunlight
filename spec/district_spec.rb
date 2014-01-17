@@ -23,10 +23,7 @@ describe Sunlight::District do
     end
 
     it "should return one record when valid street address is passed in" do
-      mock_placemark = mock Geocoding::Placemark
-      mock_placemark.should_receive(:latitude).and_return(123.45)
-      mock_placemark.should_receive(:longitude).and_return(-123.45)
-      Geocoding.should_receive(:get).and_return([mock_placemark])
+
       Sunlight::District.should_receive(:get_from_lat_long).and_return(Sunlight::District.new('NJ', '05'))
 
       district = Sunlight::District.get(:address => "123 Main St New York New York 10108")
