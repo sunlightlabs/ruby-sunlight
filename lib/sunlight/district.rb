@@ -23,7 +23,7 @@ module Sunlight
       elsif (params[:address])
 
         # get the lat/long from Google
-        placemarks = Geocoding::get(params[:address])
+        placemarks = Geocoder.search(params[:address])
 
         unless placemarks.empty?
           placemark = placemarks[0]
