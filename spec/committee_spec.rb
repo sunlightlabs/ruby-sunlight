@@ -22,6 +22,8 @@ describe Sunlight::Committee do
       comm = Sunlight::Committee.new(@example_committee)
       comm.should be_an_instance_of(Sunlight::Committee)
       comm.name.should eql("Joint Committee on Printing")
+      comm.subcommittees.length.should eq 1
+      comm.members.length.should eq 1
     end
 
   end
