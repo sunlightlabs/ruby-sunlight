@@ -3,3 +3,4 @@
 coverage
 setup.rb
 sunlight*.gem
+Gemfile.lock
