@@ -115,19 +115,7 @@ module Sunlight
 
       url = construct_url("legislators.getList", params)
 
-      if (result = get_json_data(url))
-
-        legislators = []
-        result["response"]["legislators"].each do |legislator|
-          legislators << Legislator.new(legislator["legislator"])
-        end
-
-        legislators
-
-      else  
-        nil
-      end # if response.class
-
+      legislators_from_url(url)
     end
     
     #
@@ -149,7 +137,13 @@ module Sunlight
     def self.all_in_zipcode(zipcode)
 
       url = construct_url("legislators.allForZip", {:zip => zipcode})
-      
+
+      legislators_from_url(url)
+
+    end # def self.all_in_zipcode
+    
+    
+    def self.legislators_from_url(url)
       if (result = get_json_data(url))
 
         legislators = []
@@ -162,10 +156,7 @@ module Sunlight
       else  
         nil
       end # if response.class
-
-    end # def self.all_in_zipcode
-    
-    
+    end
     # 
     # Fuzzy name searching. Returns possible matching Legislators 
     # along with a confidence score. Confidence scores below 0.8

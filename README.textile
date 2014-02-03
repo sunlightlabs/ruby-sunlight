@@ -1,8 +1,8 @@
-h1. Sunlight Labs API Gem "!https://codeclimate.com/github/sunlightlabs/ruby-sunlight.png!":https://codeclimate.com/github/sunlightlabs/ruby-sunlight "!https://travis-ci.org/nihonjinrxs/ruby-sunlight.png?branch=master!":https://travis-ci.org/github/nihonjinrxs/ruby-sunlight
+h1. Sunlight Labs API Gem "!https://codeclimate.com/github/sunlightlabs/ruby-sunlight.png!":https://codeclimate.com/github/sunlightlabs/ruby-sunlight "!https://travis-ci.org/nihonjinrxs/ruby-sunlight.png?branch=master!":https://travis-ci.org/nihonjinrxs/ruby-sunlight
 
-NOTE: This file is formatted in Textile and best viewed on "GitHub":http://github.com/sunlightlabs/ruby-sunlightapi.
+NOTE: This file is formatted in Textile and best viewed on "GitHub":http://github.com/sunlightlabs/ruby-sunlight.
 
-See "RDoc.info":http://rdoc.info/projects/sunlightlabs/ruby-sunlightapi for the full RDoc.
+See "RDoc.info":http://rdoc.info/projects/sunlightlabs/ruby-sunlight for the full RDoc.
 
 h2. Description
 
