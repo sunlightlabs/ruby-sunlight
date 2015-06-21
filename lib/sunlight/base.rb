@@ -3,7 +3,7 @@ module Sunlight
   # Houses general methods to work with the Sunlight and Google Maps APIs
   class Base
 
-    API_URL = "http://services.sunlightlabs.com/api/"
+    API_URL = "http://congress.api.sunlightfoundation.com"
     API_FORMAT = "json"
     @@api_key = ''
     
